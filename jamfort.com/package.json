@@ -2,7 +2,7 @@
   "name": "jamfort.com",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8888",
+  "proxy": "http://localhost:8888/",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",

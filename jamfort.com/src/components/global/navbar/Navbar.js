@@ -81,12 +81,6 @@ const Navbar = ({ account }) => {
                         <Link to="/top-tracks" className={classes.link}>
                             Tracks
                         </Link>
-                        <Link to="/taste" className={classes.link}>
-                            Taste
-                        </Link>
-                        <Link to="/multi-player" className={classes.link}>
-                            Multiplayer
-                        </Link>
                     </Box>
                     <Box className={classes.aviContainer}>
                         <Avatar src={profilePic} className={classes.avi}/>

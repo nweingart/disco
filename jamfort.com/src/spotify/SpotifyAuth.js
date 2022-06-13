@@ -21,11 +21,11 @@ export const logout = () => {
         window.localStorage.removeItem(LOCAL_STORAGE_KEYS[property]);
     }
 
-    // take user back to the sign in page
+    // take user back to the sign-in page
     window.location = window.location.origin;
 }
 
-// function to check whether or not the access token
+// function to check whether the access token
 const hasTokenExpired = () => {
     const { accessToken, timestamp, expireTime } = LOCAL_STORAGE_VALUES;
 
@@ -39,7 +39,6 @@ const hasTokenExpired = () => {
 const getRefreshToken =  async () => {
         if (!LOCAL_STORAGE_VALUES.refreshToken || LOCAL_STORAGE_VALUES.refreshToken === 'undefined' || (Date.now() - Number(LOCAL_STORAGE_VALUES.timestamp) / 1000) < 1000) {
             console.log('No refresh token...');
-
         }
         else if (LOCAL_STORAGE_VALUES.refreshToken ) {
             const { data } = await axios.get(`/refresh_token?refresh_token=${LOCAL_STORAGE_VALUES.refreshToken}`);
@@ -106,6 +105,10 @@ export const getTopTracks = interval => {
     return axios.get(`/me/top/tracks?time_range=${interval}`)
 }
 
-export const getUserSavedTracks = () => {
-    return axios.get('me/tracks')
+export const getRecommendedTracks = ({ artist, genre, track }) => {
+    return axios.get(`/recommendations?limit=100&seed_artists=${artist}&seed_genres=${genre}&seed_tracks=${track}`)
+}
+
+export const getTrack = (word1, word2) => {
+    return axios.get(`/search?query=${word1}+${word2}&type=track&locale=en-us&offset=0&limit=20"`)
 }

@@ -23,22 +23,15 @@ const ArtistsMediumTerm = () => {
     console.log(topArtists)
 
     return(
-        <>
-          <Container>
-            <Typography variant="h4">
-              Last 6 Months' Top Artists
-            </Typography>
-          </Container>
-          <Grid container>
-            {topArtists?.map((artist) => {
-              return (
-                <Grid item xs={12} md={4} lg={3}>
-                  <ArtistsCard artist={artist.name} popularity={artist.popularity} genres={artist.genres[0]} dialogueImageUrl={artist.images[1].url} cardImageUrl={artist.images[0].url}/>
-                </Grid>
-              );
-              })}
-          </Grid>
-        </>
+        <Grid container>
+          {topArtists?.map((artist) => {
+            return (
+              <Grid item xs={12}sm={6}  md={4} lg={3}>
+                <ArtistsCard artist={artist.name} popularity={artist.popularity} genres={artist.genres[0]} dialogueImageUrl={artist.images[1].url} cardImageUrl={artist.images[0].url}/>
+              </Grid>
+            );
+            })}
+        </Grid>
       );
 };
 

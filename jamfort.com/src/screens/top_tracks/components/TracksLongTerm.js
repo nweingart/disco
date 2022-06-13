@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getTopTracks } from '../../../spotify/SpotifyAuth'
+import { getRecommendedTracks, getTrack } from '../../../spotify/SpotifyAuth'
 import TracksCard from '../../../components/common/TracksCard';
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -9,19 +9,37 @@ import Grid from "@material-ui/core/Grid";
 
 
 const TracksLongTerm = () => {
-    const [topTracks, setTopTracks] = useState(null);
+    const [recommendedTracks, setRecommendedTracks] = useState(null)
+    const [track, setTrack] = useState(null)
+
+
+    const artist = '4oUHIQIBe0LHzYfvXNW4QM'
+    const genre = 'country'
+
 
     useEffect(() => {
-          const TopTracks = async () => {
-            const { data } = await getTopTracks('long_term');
 
-            setTopTracks(data.items);
+          const Track = async () => {
+            const { data } = await getTrack('Chasing', 'You')
+
+
+            setTrack(data.tracks)
           }
 
-          TopTracks();
+          const Recommendations = async () => {
+            const { data } = await getRecommendedTracks({ artist, genre, track })
+
+            setRecommendedTracks(data.tracks)
+          }
+
+          Recommendations()
+          Track()
+
     }, [])
 
-    console.log(topTracks)
+    console.log(recommendedTracks)
+    console.log(track)
+
 
     return(
       <>
@@ -31,10 +49,10 @@ const TracksLongTerm = () => {
             </Typography>
           </Container>
           <Grid container>
-            {topTracks?.map((track) => {
+            {recommendedTracks?.map((track) => {
               return (
                 <Grid item xs={12} md={4} lg={3}>
-                  <TracksCard name={track.name} artist={track.artists[0].name} cardImageUrl={track.album.images[0].url} dialogueImageUrl={track.album.images[1].url} popularity={track.popularity}/>
+                  <TracksCard name={track.name} popularity={track.popularity}/>
                 </Grid>
               );
               })}

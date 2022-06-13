@@ -8,15 +8,13 @@ import { accessToken, getAccount } from './spotify/SpotifyAuth';
 
 // global imports
 import Navbar from './components/global/navbar/Navbar';
-import Footer from './components/global/footer/Footer';
 
 // screen imports
 import Dashboard from './screens/dashboard/Dashboard';
 import SignedOut from './screens/dashboard/SignedOut';
 import TopArtists from './screens/top_artists/screen/TopArtists';
 import TopTracks from './screens/top_tracks/screen/TopTracks';
-import Taste from './screens/taste/screen/Taste';
-import Social from './screens/social/Social';
+import RecommendedTracks from './screens/recommended_tracks/screen/RecommendedTracks';
 
 
 // style imports
@@ -74,14 +72,10 @@ const App = () => {
               <Route path='/top-tracks'>
                 <TopTracks />
               </Route>
-              <Route path="/taste">
-                <Taste/>
-              </Route>
-              <Route path='/social'>
-                <Social/>
+              <Route path='/recommended'>
+                <RecommendedTracks />
               </Route>
             </Switch>
-          <Footer />
           </Router>
         </ThemeProvider>
         )

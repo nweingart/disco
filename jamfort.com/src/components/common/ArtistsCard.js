@@ -51,7 +51,7 @@ const useStyles = makeStyles({
   });
   
 
-const ArtistCard = ({artist, cardImageUrl, dialogueImageUrl, popularity, genres}) => {
+const ArtistCard = ({artist, cardImageUrl, dialogueImageUrl, popularity, genres, rank}) => {
     const [open, setOpen] = useState(false);
     const classes = useStyles();
 
@@ -69,7 +69,7 @@ const ArtistCard = ({artist, cardImageUrl, dialogueImageUrl, popularity, genres}
                 <Card className={classes.root}>
                     <CardActionArea>
                         <Typography>
-                            {artist}
+                            {rank}{artist}
                         </Typography>
                         <CardMedia 
                             className={classes.media}
