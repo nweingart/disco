@@ -17,7 +17,7 @@ const useStyles = makeStyles({
       marginBottom: '15%'
     },
     media: {
-      height: 300,
+      height: 100,
     },
     box : {
         display: 'flex',

@@ -17,7 +17,7 @@ const useStyles = makeStyles({
       marginBottom: '15%'
     },
     media: {
-      height: 300,
+      height: 100,
     },
     box : {
         display: 'flex',
@@ -51,7 +51,7 @@ const useStyles = makeStyles({
   });
   
 
-const ArtistCard = ({artist, cardImageUrl, dialogueImageUrl, popularity, genres, rank}) => {
+const ArtistCard = ({artist, cardImageUrl, dialogueImageUrl, popularity, rank}) => {
     const [open, setOpen] = useState(false);
     const classes = useStyles();
 
@@ -95,11 +95,6 @@ const ArtistCard = ({artist, cardImageUrl, dialogueImageUrl, popularity, genres,
                         <Box className={classes.box}>
                             <Typography>
                                 Popularity: {popularity}
-                            </Typography>
-                        </Box>
-                        <Box className={classes.box}>
-                            <Typography>
-                                Top Genre: {genres}
                             </Typography>
                         </Box>
                     </DialogContent>

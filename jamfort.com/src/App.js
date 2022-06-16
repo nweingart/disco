@@ -12,9 +12,6 @@ import Navbar from './components/global/navbar/Navbar';
 // screen imports
 import Dashboard from './screens/dashboard/Dashboard';
 import SignedOut from './screens/dashboard/SignedOut';
-import TopArtists from './screens/top_artists/screen/TopArtists';
-import TopTracks from './screens/top_tracks/screen/TopTracks';
-import RecommendedTracks from './screens/recommended_tracks/screen/RecommendedTracks';
 
 
 // style imports
@@ -64,16 +61,7 @@ const App = () => {
           <Navbar account={account}/>
             <Switch>
               <Route exact path='/'>
-                <Dashboard account={account}/>
-              </Route>
-              <Route path='/top-artists'>
-                <TopArtists />
-              </Route>
-              <Route path='/top-tracks'>
-                <TopTracks />
-              </Route>
-              <Route path='/recommended'>
-                <RecommendedTracks />
+                <Dashboard />
               </Route>
             </Switch>
           </Router>
