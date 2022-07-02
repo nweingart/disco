@@ -32,9 +32,7 @@ const SearchArtists = props => {
 
   return(
     <Container>
-      <form noValidate autoComplete="off" >
-        <TextField id="outlined-basic" label="Artist" variant="outlined" onInput={handleChange} />
-      </form>
+      <TextField id="outlined-basic" label="Artist" variant="outlined" onInput={handleChange} />
       <Grid container>
         {searchedArtists?.map((artist) => {
           return (

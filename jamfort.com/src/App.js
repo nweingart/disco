@@ -12,6 +12,7 @@ import Navbar from './components/global/navbar/Navbar';
 // screen imports
 import Dashboard from './screens/dashboard/Dashboard';
 import SignedOut from './screens/dashboard/SignedOut';
+//import Festival from "./festival/Festival";
 
 
 // style imports

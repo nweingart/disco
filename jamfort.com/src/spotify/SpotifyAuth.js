@@ -105,14 +105,27 @@ export const getTopTracks = interval => {
     return axios.get(`/me/top/tracks?time_range=${interval}`)
 }
 
+export const getGenres = () => {
+    return axios.get('/recommendations/available-genre-seeds')
+}
+
 export const getRecommendedTracks = ( artist, genre, track ) => {
     return axios.get(`/recommendations?limit=50&seed_artists=${artist}&seed_genres=${genre}&seed_tracks=${track}`)
 }
 
-export const getTrack = (name) => {
+export const getTrack = name => {
     return axios.get(`/search?query=${name}&type=track&locale=en-us&offset=0&limit=20`)
 }
 
-export const getArtist = (name) => {
+export const getArtist = name => {
     return axios.get(`/search?q=${name}&type=artist`)
+}
+
+
+export const saveTrack = Id => {
+    return axios.put(`/me/tracks?ids=${Id}`)
+}
+
+export const removeTrack = Id => {
+    return axios.delete(`/me/tracks?ids=${Id}`)
 }
