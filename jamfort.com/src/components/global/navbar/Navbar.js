@@ -74,20 +74,6 @@ const Navbar = ({ account }) => {
                     <Box className={classes.brandContainer}>
                         <Logo />
                     </Box>
-                    <Box className={classes.linkContainer} >
-                        <Link to="/top-artists" className={classes.link}>
-                            Artists
-                        </Link>
-                        <Link to="/top-tracks" className={classes.link}>
-                            Tracks
-                        </Link>
-                        <Link to="/taste" className={classes.link}>
-                            Taste
-                        </Link>
-                        <Link to="/multi-player" className={classes.link}>
-                            Multiplayer
-                        </Link>
-                    </Box>
                     <Box className={classes.aviContainer}>
                         <Avatar src={profilePic} className={classes.avi}/>
                     </Box>
