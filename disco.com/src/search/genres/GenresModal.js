@@ -20,7 +20,12 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
   button: {
-    background: 'green'
+    background: 'black',
+    color: 'white',
+    "&:hover": {
+      backgroundColor: 'green',
+      color: 'white',
+    }
   }
 }));
 

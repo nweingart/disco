@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
     },
     avi: {
         marginTop: 5,
+        marginRight: '50%',
     },
     link: {
         margin: 20,
@@ -71,9 +72,6 @@ const Navbar = ({ account }) => {
         <AppBar position="static" style={{ marginBottom: 25, backgroundColor: 'black'}}>
             <Toolbar>
                 <Box className={classes.container}>
-                    <Box className={classes.brandContainer}>
-                        <Logo />
-                    </Box>
                     <Box className={classes.aviContainer}>
                         <Avatar src={profilePic} className={classes.avi}/>
                     </Box>

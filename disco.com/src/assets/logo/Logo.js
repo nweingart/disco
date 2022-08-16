@@ -2,7 +2,6 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box'
 import { makeStyles, Typography } from '@material-ui/core';
-import LogoIcon from './logo_icon.png';
 
 const useStyles = makeStyles({
     logoContainer: {
@@ -25,13 +24,6 @@ const Logo = () => {
     return (
         <Container>
             <Box className={classes.logoContainer}>
-                <Box
-                    className={classes.logoIcon}
-                    component="img"
-                    alt=""
-                    src={LogoIcon}
-                >
-                </Box>
                 <Typography className={classes.logoText}>
                     Spotify TasteTracker
                 </Typography>

@@ -12,20 +12,7 @@ import Navbar from './components/global/navbar/Navbar';
 // screen imports
 import Dashboard from './screens/dashboard/Dashboard';
 import SignedOut from './screens/dashboard/SignedOut';
-//import Festival from "./festival/Festival";
 
-
-// style imports
-import { purple } from '@material-ui/core/colors';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#fefefe',
-    },
-    secondary: purple
-  }
-})
 
 const App = () => {
   const [token, setToken] = useState(null)
@@ -57,7 +44,6 @@ const App = () => {
         !token ? (
           <SignedOut />
         ) : (
-        <ThemeProvider theme={theme}>
           <Router>
           <Navbar account={account}/>
             <Switch>
@@ -66,7 +52,6 @@ const App = () => {
               </Route>
             </Switch>
           </Router>
-        </ThemeProvider>
         )
       }
     </div>

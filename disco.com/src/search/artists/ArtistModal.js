@@ -22,8 +22,13 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
   button: {
-    background: 'green',
+    background: 'black',
+    color: 'white',
     borderRadius: 5,
+    "&:hover": {
+      backgroundColor: 'red',
+      color: 'white',
+    }
   },
 }));
 

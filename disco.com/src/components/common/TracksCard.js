@@ -7,6 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button'
+import ReactAudioPlayer from "react-audio-player";
 
 const useStyles = makeStyles({
     root: {
@@ -17,10 +18,14 @@ const useStyles = makeStyles({
     media: {
       height: 700,
     },
+    label: {
+      fontWeight: 400,
+      fontFamily: 'sans-serif'
+    }
   });
   
 
-const TracksCard = ({ name, artist, cardImageUrl, popularity, id, recommendation }) => {
+const TracksCard = ({ name, artist, cardImageUrl, releaseYear, id, recommendation, previewUri }) => {
     const classes = useStyles()
 
 
@@ -37,14 +42,23 @@ const TracksCard = ({ name, artist, cardImageUrl, popularity, id, recommendation
     <Container>
         <Card className={classes.root}>
             <CardActionArea>
+              <div className={classes.label}>
                 <Typography>
-                    {name}            {popularity}
+                  {`${name}, ${artist} (${releaseYear})`}
                 </Typography>
+              </div>
+
                 <CardMedia
                     className={classes.media}
                     image={cardImageUrl}
                     title={artist}
                 />
+              <ReactAudioPlayer
+                src={previewUri}
+                autoPlay={false}
+                loop={true}
+                controls
+              />
               <Button onClick={ recommendation ? () => SaveTheTrack(id) : null }>
                 +
               </Button>

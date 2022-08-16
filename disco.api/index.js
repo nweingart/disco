@@ -116,7 +116,7 @@ app.get('/refresh_token', (req, res) => {
 
 const port = 8888;
 app.listen(port, () => {
-    console.log(`express app listening at http://192.168.1.247:${port}`);
+    console.log(`express app listening at http/localhost:${port}`);
 });
 
 // app.METHOD(PATH, HANDLER);
